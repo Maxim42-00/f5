@@ -1,4 +1,3 @@
-"use strict"
 var a1=[];
 var a2=[];
 function fcpy(arr1, arr)

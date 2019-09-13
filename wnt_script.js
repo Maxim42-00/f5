@@ -21,6 +21,7 @@ var loading_code={};
 var saved_games={};
 saved_games["длинный ход"]="5555555555555555555555555550505050555505051525555551515150555505050505555551515150555505050505555551515150555505050505555555555555555555555555552";
 
+
 var cpu_on=0;
 var cpu_num=2;
 var cpu_proceeding=0;
@@ -278,7 +279,7 @@ function save_game()
     {
         fkey=i;
         loading_code[fkey]=saved_games[i];
-        jQuery("#loading_name").append('<option style="width: 50px;" value="'+fkey+'">' + fkey + '</option>');
+        jQuery("#loading_name").append('<option value="'+fkey+'">' + fkey + '</option>');
     }
     jQuery("#minor_menu").append("<input type='text' id='saving_name'/><br/>");
     jQuery("#minor_menu").append("<input type='button' id='save_btn' value='save' onclick='write_game()'  />");
@@ -329,7 +330,7 @@ function load_name()
         return;
     }    
     op=1;
-    jQuery("#minor_menu").html("<select id='loading_name' size='4'> </select><br/>");
+    jQuery("#minor_menu").html("<select id='loading_name' size='4' style='width: 170px'> </select><br/>");
     var str;
     var fkey="";
     loading_code={};
@@ -337,7 +338,7 @@ function load_name()
     {
         fkey=i;
         loading_code[fkey]=saved_games[i];
-        jQuery("#loading_name").append('<option style="width: 170px;" value="'+fkey+'">' + fkey + '</option>');
+        jQuery("#loading_name").append('<option  value="'+fkey+'">' + fkey + '</option>');
     }
     jQuery("#minor_menu").append('<input type="button" value="load" onclick="load_game()"/>');
     jQuery("#minor_menu").append('<input type="button" value="delete" onclick="delete_game()"/>');
